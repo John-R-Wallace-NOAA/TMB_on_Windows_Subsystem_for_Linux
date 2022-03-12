@@ -1,4 +1,6 @@
 blah blah blah 
+
+
      # You will need to be an administrator on your Windows machine to install WSL
      
      # Run PowerShell as Administrator (use search (the magnifier glass icon) and type < power > and click on 'Run as Administrator'
@@ -124,7 +126,53 @@ blah blah blah
      remotes::install_github("kaskr/adcomp/TMB", INSTALL_opts = "--no-staged-install")
      
      # Test TMB
+     
      library(TMB)
      runExample('simple')
      opt
      
+add in error files
+
+     # Create an out of bounds error and verify the gdbsource() gives the correct line where the error is
+     # Compiling 'simpleError.cpp' will work:
+     compile('simpleError.cpp', "-O0 -g")
+     
+     # Sourcing 'simpleError.R' will crash R
+     source('simpleError.R')
+     
+     # Therefore, get back into R and use gdbsource() in Linux and find the line of code (30) that has the error
+     library(TMB)
+     gdbsource('simpleError.R')
+     
+     
+     # When doing further explopration, unload simpleError.so, if needed
+     getLoadedDLLs()
+     dyn.unload(dynlib("simpleError"))
+     
+---
+     
+     # -- Extra --
+     # The defalut plotting device is 'pdf'
+     
+     butterfly <- function (alpha = 4, beta = 12, plot = TRUE, ...) {
+     
+         theta <- seq(0, 24 * pi, len = 2000)
+         radius <- exp(cos(theta)) - 2 * cos(round(alpha) * theta) + 
+             sin(theta/beta)^5
+         x <- -radius * sin(theta)
+         y <-  radius * cos(theta)
+         if(plot)
+            plot(range(x) + c(-0.1, 0.1), range(y) + c(-0.1, 0.1), xlab = "",  
+              ylab = "", type = "n", xaxt = "n", yaxt = "n", bty = "n")   
+         lines(x, y, ...)
+     }
+     
+     butterfly(col = 'Dodger blue')
+     dev.cur()
+     butterfly(2.5, 12, col = 'green')
+     dev.off()
+     
+     # Jump back to C:\TMB_Debug in the open Window's File Explorer and view the 2 figures in 'Rplots.pdf'.
+     
+
+
