@@ -1,5 +1,5 @@
 Instructions to install the TMB ( https://github.com/kaskr/adcomp ) R package running under Ubuntu using WSL (Windows Subsystem for Linux).
-This installation allows TMB::gdbsource() to properly debug Cpp files.
+This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows.
 
 
      # You will need to be an administrator on your Windows machine to install WSL
