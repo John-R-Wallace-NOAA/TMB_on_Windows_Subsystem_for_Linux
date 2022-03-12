@@ -1,4 +1,5 @@
-blah blah blah 
+Instructions to install the TMB ( https://github.com/kaskr/adcomp ) R package running under Ubuntu using WSL (Windows Subsystem for Linux).
+This installation allows TMB::gdbsource() to properly debug Cpp files.
 
 
      # You will need to be an administrator on your Windows machine to install WSL
@@ -52,15 +53,16 @@ blah blah blah
      # For now, change to this directory manually
      cd /mnt/c/TMB_Debug
      
-     # Before installing apps, including R, here is some additional information
+     # Before installing the apps, including R, here is some additional information.
        
      # WSL files are in an \AppData\Local\Packages folder by user, e.g. mine are here:
      C:\Users\John\AppData\Local\Packages
      
-     # The names look like (sort by most recently 'Date modified'):
+     # The name (sort by most recently 'Date modified') will appear similar to:
      CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc
      
-     # This folder can be renamed, backed up, and exported to a colleague.  (If you also use Docker, you may have exit out of Docker to work with the folder.)
+     # This folder can be renamed, backed up, saved for computational reproducibility, and exported to a colleague.  
+     # (If you also use Docker, you may have exit out of Docker before working with the folder.)
      https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-machines-with-import-and-export
      
      # WSL can also be opened by using Windows' search feature, typing  < wsl > and click on 'Run as Administrator'.  (There will be a different default color scheme.)
@@ -75,12 +77,10 @@ blah blah blah
      #Install 'curl' (The '-y' option auto answers 'Yes' to prompts to continue.)
      apt-get -y install curl
      apt-get -y install libcurl4-openssl-dev
-     
-     
+          
      #Install libssl-dev for the R package 'httr'
      apt-get -y install libssl-dev
-     
-     
+          
      # Install gdb following: https://stackoverflow.com/questions/10255082/installing-r-from-cran-ubuntu-repository-no-public-key-error
      # The first command may take some time or perhaps will fail for a time - continue to retry - install R and return here if needed
      gpg --keyserver pgp.mit.edu --recv-key 51716619E084DAB9
@@ -95,7 +95,7 @@ blah blah blah
      
      
      # CRAN instructions for installing R in Ubuntu: https://cran.r-project.org/  Select 'Ubuntu' on < Download R for Linux (Debian, Fedora/Redhat, Ubuntu) >
-     # < install build-essential> is not in the CRAN instuctions but was needed for me and others on the internet.
+     # < install build-essential> is not in the CRAN instuctions but was needed by me and others on the internet.
      apt update -qq
      apt -y install build-essential
      
