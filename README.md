@@ -41,6 +41,7 @@ blah blah blah
      cd ~
      
      # In Windows File Explorer create the folder "TMB_Debug" on the C: drive. Enter the folder and leave File Explorer open.
+     # Copy the R and Cpp files from the R folder in this repo to C:\TMB_Debug
      
      # All the Windows' drives will be mounted in /mnt on Ubuntu, e.g. 'c' for 'C:' drive.
      ls ../../mnt
@@ -131,8 +132,6 @@ blah blah blah
      runExample('simple')
      opt
      
-add in error files
-
      # Create an out of bounds error and verify the gdbsource() gives the correct line where the error is
      # Compiling 'simpleError.cpp' will work:
      compile('simpleError.cpp', "-O0 -g")
