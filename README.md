@@ -22,7 +22,8 @@ This installation allows TMB::gdbsource() to properly debug Cpp files while usin
      # Install Ubuntu-18.04 into wsl by entering  :
      PS> wsl --install -d Ubuntu-18.04 
      
-     # A new window will open. Enter a user name and password. A (very) short password be accepted (a single space will do) and will be faster to type when needing elevated rights.
+     # A new window will open. Enter a user name and password. A (very) short password be accepted (a single space will do) 
+     #   and will be faster to type when needing elevated rights.
      # Exit out of the new window by typing < exit > and then start WSL in the PowerShell
      PS> wsl
      
@@ -38,16 +39,14 @@ This installation allows TMB::gdbsource() to properly debug Cpp files while usin
      # Check Ubuntu version 
      lsb_release -a
      
-     # Change to home folder
-     cd ~
-     
      # In Windows File Explorer create the folder "TMB_Debug" on the C: drive. Enter the folder and leave File Explorer open.
-     # Copy the R and Cpp files from the R folder in this repo to C:\TMB_Debug
+     # Copy the R and Cpp files from the R_and_Cpp folder in this repo to C:\TMB_Debug
      
-     # All the Windows' drives will be mounted in /mnt on Ubuntu, e.g. 'c' for 'C:' drive.
+     # All the Windows' drives will be mounted in /mnt on Ubuntu, e.g. 'c' for 'C:' drive:
      ls ../../mnt
      
-     # Create a change directory command in .bashrc to run at startup. Here the 'TMB_Debug' folder on the 'C:' drive is being used. This needs to be in the home folder (~).
+     # Create a change directory command in .bashrc to run at startup. '.bashrc' needs to be in the home folder (~).
+     cd ~
      echo 'cd /mnt/c/TMB_Debug' > .bashrc
      
      # For now, change to this directory manually
@@ -65,10 +64,12 @@ This installation allows TMB::gdbsource() to properly debug Cpp files while usin
      # (If you also use Docker, you may have exit out of Docker before working with the folder.)
      https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-machines-with-import-and-export
      
-     # WSL can also be opened by using Windows' search feature, typing  < wsl > and click on 'Run as Administrator'.  (There will be a different default color scheme.)
+     # WSL can also be opened by using Windows' search feature, typing  < wsl > and click on 'Run as Administrator'.  
+     # (There will be a different default color scheme.)
      
      
-     # Make yourself root to do the following installs (the '$' prompt will change to '#', type  < exit > to close) (Mnemonic: 'The pound is stronger than the dollar.')
+     # Make yourself root to do the following installs (the '$' prompt will change to '#', type  < exit > to close) 
+     # (Mnemonic: 'The pound is stronger than the dollar.')
      sudo su
      
      # First do an update
@@ -94,7 +95,8 @@ This installation allows TMB::gdbsource() to properly debug Cpp files while usin
      apt-get -y install gfortran
      
      
-     # CRAN instructions for installing R in Ubuntu: https://cran.r-project.org/  Select 'Ubuntu' on < Download R for Linux (Debian, Fedora/Redhat, Ubuntu) >
+     # CRAN instructions for installing R in Ubuntu: https://cran.r-project.org/  
+     # Select 'Ubuntu' on the line < Download R for Linux (Debian, Fedora/Redhat, Ubuntu) >
      # < install build-essential> is not in the CRAN instuctions but was needed by me and others on the internet.
      apt update -qq
      apt -y install build-essential
@@ -103,7 +105,8 @@ This installation allows TMB::gdbsource() to properly debug Cpp files while usin
      apt -y install --no-install-recommends software-properties-common dirmngr
      
      # add the signing key (by Michael Rutter) for these repos
-     # To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc (This command doesn't work for me, and isn't needed to continue.)
+     # To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+     # (The verify key command doesn't work for me, but isn't needed to continue.)
      # Fingerprint: 298A3A825C0D65DFD57CBB651716619E084DAB9
      wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
      
@@ -117,7 +120,8 @@ This installation allows TMB::gdbsource() to properly debug Cpp files while usin
      # Startup R in Ubuntu. Note, to escape out of a running program on Linux use < Ctrl-c >.
      R
      
-     # < Ctrl-z > jumps out into the bash shell; < ps > in the shell shows processes; < fg > in the shell goes back into R (One could start another R process and jump between them, Google for more info.)
+     # < Ctrl-z > jumps out into the bash shell; < ps > in the shell shows processes; < fg > in the shell goes back into R 
+     # (One could start another R process and jump between them, Google for more info.)
      
      # Now in R
      options(width = 140) # Default command line width in Linux-alikes is too short
