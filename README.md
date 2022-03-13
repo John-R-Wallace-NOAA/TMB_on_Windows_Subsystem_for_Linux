@@ -150,7 +150,8 @@ It also provides R on an Ubuntu installation with GDB debugging software for any
      library(TMB)
      gdbsource('simpleError.R')
      
-     # Try using GDB interactively (see https://betterexplained.com/articles/debugging-with-gdb/ ; http://manpages.ubuntu.com/manpages/trusty/man1/gdb.1.html )
+     # Try using GDB interactively (see https://betterexplained.com/articles/debugging-with-gdb/ 
+     #    and http://manpages.ubuntu.com/manpages/trusty/man1/gdb.1.html )
      gdbsource('simpleError.R', interactive = TRUE)
      (gdb) help
      (gdb) help stack
