@@ -32,7 +32,8 @@ It also provides R on an Ubuntu installation for any other purpose.
      PS> wsl -s Ubuntu-18.04
      
      # < wsl -s > sets the given distribution as the default
-     # Now start WSL
+     
+     # Now try WSL again
      PS> wsl 
      
      # Check Ubuntu version (note that this flavor of Ubuntu is 'Bionic')
