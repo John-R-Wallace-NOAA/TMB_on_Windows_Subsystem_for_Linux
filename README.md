@@ -1,6 +1,6 @@
 Instructions to install the TMB ( https://github.com/kaskr/adcomp ) R package running under Ubuntu using WSL (Windows Subsystem for Linux).
 This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows as the main OS.
-It also provides R on an Ubuntu installation with gdb debugging software for any other purpose.
+It also provides R on an Ubuntu installation with GDB debugging software for any other purpose.
 
      # You will need to be an administrator on your Windows machine to install WSL.
      
@@ -150,7 +150,7 @@ It also provides R on an Ubuntu installation with gdb debugging software for any
      library(TMB)
      gdbsource('simpleError.R')
      
-     # Try using gdb interactively
+     # Try using GDB interactively
      gdbsource('simpleError.R', interactive = TRUE)
      (gdb) help
      (gdb) help stack
