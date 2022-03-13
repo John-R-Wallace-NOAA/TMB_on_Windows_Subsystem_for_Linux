@@ -2,7 +2,7 @@ Instructions to install the TMB ( https://github.com/kaskr/adcomp ) R package ru
 This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows as the main OS.
 It also provides R on an Ubuntu installation for any other purpose.
 
-     # You will need to be an administrator on your Windows machine to install WSL
+     # You will need to be an administrator on your Windows machine to install WSL.
      
      # Run PowerShell as Administrator (use search (the magnifier glass icon) and type < power > and click on 'Run as Administrator'
      # Right clicking in PowerShell will insert what previously has been copied into the clipboard inside or outside or the PowerShell.
