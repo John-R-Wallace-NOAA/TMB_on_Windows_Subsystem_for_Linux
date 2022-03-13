@@ -41,7 +41,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      lsb_release -a
      
      # In Windows File Explorer create the folder "TMB_Debug" on the C: drive. Enter the folder and leave File Explorer open.
-     # Copy the R and Cpp files from the R_and_Cpp folder in this repo to C:\TMB_Debug
+     # Copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder in this repo to C:\TMB_Debug
      
      # All the Windows' drives will be mounted in /mnt on Ubuntu, e.g. 'c' for 'C:' drive:
      ls ../../mnt
@@ -65,22 +65,22 @@ It also provides R on an Ubuntu installation for any other purpose.
      # (If you also use Docker, you may have exit out of Docker before working with the folder.)
      https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-machines-with-import-and-export
      
-     # WSL can also be opened by using Windows' search feature, typing  < wsl > and click on 'Run as Administrator'.  
+     # WSL can also be opened by using the Windows' search feature: type < wsl > and click on 'Run as Administrator'.  
      # (There will be a different default color scheme.)
      
      
-     # Make yourself root to do the following installs (the '$' prompt will change to '#', type < exit > to close) 
+     # Make yourself root to do the following installs using the password set above (the '$' prompt will change to '#', type < exit > to close) 
      # (Mnemonic: 'The pound is stronger than the dollar.')
      sudo su
      
      # First do an update
      apt-get update
      
-     #Install 'curl' (The '-y' option auto answers 'Yes' to prompts to continue.)
+     # Install 'curl' (The handy '-y' option auto answers 'Yes' to prompts to continue or stop.)
      apt-get -y install curl
      apt-get -y install libcurl4-openssl-dev
           
-     #Install libssl-dev for the R package 'httr'
+     # Install libssl-dev for the R package 'httr'
      apt-get -y install libssl-dev
           
      # Install gdb following: https://stackoverflow.com/questions/10255082/installing-r-from-cran-ubuntu-repository-no-public-key-error
@@ -91,7 +91,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      apt-key add jranke_cran.asc 
      apt -y install gdb
      
-     # Install BLAS and LAPACK packages and FORTRAN
+     # Install BLAS, LAPACK, and FORTRAN packages
      apt-get -y install libblas-dev liblapack-dev
      apt-get -y install gfortran
      
@@ -125,7 +125,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      # < Ctrl-z > jumps out into the bash shell; < ps > in the shell shows processes; < fg > in the shell goes back into R 
      # (One could start another R process and jump between them, Google for more info.)
      
-     # Now in R
+     # Now in R (see below for GitHub install)
      options(width = 140) # Default command line width in Linux-alikes is too short - adjust 140 to fit your current window size
      install.packages(c('sys', 'askpass', 'jsonlite', 'mime', 'openssl', 'R6', 'curl', 'httr', 'remotes', 'TMB'))
      
