@@ -150,6 +150,12 @@ It also provides R on an Ubuntu installation with gdb debugging software for any
      library(TMB)
      gdbsource('simpleError.R')
      
+     # Try using gdb interactively
+     gdbsource('simpleError.R', interactive = TRUE)
+     (gdb) help
+     (gdb) help stack
+     (gdb) bt
+     (gdb) quit
      
      # When doing further explopration, unload simpleError.so, if needed
      getLoadedDLLs()
