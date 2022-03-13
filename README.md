@@ -31,7 +31,8 @@ It also provides R on an Ubuntu installation for any other purpose.
      PS> wsl -l
      PS> wsl -s Ubuntu-18.04
      
-     # < wsl -s > sets the given distribution as the default
+     # < wsl -s > sets the given distribution as the default. For other command line options type:
+     wsl --help
      
      # Now try WSL again
      PS> wsl 
