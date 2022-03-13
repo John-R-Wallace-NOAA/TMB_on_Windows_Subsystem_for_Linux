@@ -138,7 +138,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      runExample('simple')
      opt
      
-     # Create an out of bounds error and verify the gdbsource() gives the correct line where the error occurs
+     # Create an out-of-bounds error and verify the gdbsource() gives the correct line where the error occurs
      # Compiling 'simpleError.cpp' works:
      if(file.exists('simpleError.o')) file.remove(c('simpleError.o')); if(file.exists('simpleError.so')) file.remove(c('simpleError.so'))
      compile('simpleError.cpp', "-O0 -g")
