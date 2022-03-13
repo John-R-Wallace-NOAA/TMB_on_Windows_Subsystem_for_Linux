@@ -5,7 +5,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      # You will need to be an administrator on your Windows machine to install WSL
      
      # Run PowerShell as Administrator (use search (the magnifier glass icon) and type < power > and click on 'Run as Administrator'
-     # Right clicking in PowerShell will insert what previosly has been copied into the clipboard inside or outside or the PowerShell.
+     # Right clicking in PowerShell will insert what previously has been copied into the clipboard inside or outside or the PowerShell.
      
      # Change from C:\WINDOWS\system32 to c:\, if desired
      cd ../.. 
@@ -35,8 +35,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      # Now start WSL
      PS> wsl 
      
-     # First commmands to run in Ubuntu -- explain commands and how c drive is in mnt folder as  < c >
-     # Check Ubuntu version 
+     # Check Ubuntu version (note that this flavor of Ubuntu is 'Bionic')
      lsb_release -a
      
      # In Windows File Explorer create the folder "TMB_Debug" on the C: drive. Enter the folder and leave File Explorer open.
@@ -68,7 +67,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      # (There will be a different default color scheme.)
      
      
-     # Make yourself root to do the following installs (the '$' prompt will change to '#', type  < exit > to close) 
+     # Make yourself root to do the following installs (the '$' prompt will change to '#', type < exit > to close) 
      # (Mnemonic: 'The pound is stronger than the dollar.')
      sudo su
      
@@ -96,7 +95,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      
      
      # CRAN instructions for installing R in Ubuntu: https://cran.r-project.org/  
-     # Select 'Ubuntu' on the line < Download R for Linux (Debian, Fedora/Redhat, Ubuntu) >
+     # On the CRAN website select 'Ubuntu' on the line: < Download R for Linux (Debian, Fedora/Redhat, Ubuntu) >
      # < install build-essential> is not in the CRAN instuctions but was needed by me and others on the internet.
      apt update -qq
      apt -y install build-essential
@@ -110,9 +109,10 @@ It also provides R on an Ubuntu installation for any other purpose.
      # Fingerprint: 298A3A825C0D65DFD57CBB651716619E084DAB9
      wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
      
-     # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+     # add the R 4.0 repo from CRAN
+     # Here we use lsb_release -cs to access which Ubuntu flavor you run: one of “impish”, “hirsute”, “focal”, “bionic”, …
      add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
-     
+          
      # Then run
      apt -y install --no-install-recommends r-base
      
@@ -124,10 +124,11 @@ It also provides R on an Ubuntu installation for any other purpose.
      # (One could start another R process and jump between them, Google for more info.)
      
      # Now in R
-     options(width = 140) # Default command line width in Linux-alikes is too short
+     options(width = 140) # Default command line width in Linux-alikes is too short - adjust 140 to fit your current window size
      install.packages(c('sys', 'askpass', 'jsonlite', 'mime', 'openssl', 'R6', 'curl', 'httr', 'remotes', 'TMB'))
      
      # Installing TMB from GitHub also works (or for any other package that is on GitHUb)
+     # There is less scrolling of C++ code on the screen with the GitHub install.
      # install.packages(c('sys', 'askpass', 'jsonlite', 'mime', 'openssl', 'R6', 'curl', 'httr', 'remotes'))
      # Sys.setenv(GITHUB_PAT='< Put your own GITHUB_PAT here >')  #  May work without this, at least for awhile.
      # remotes::install_github("kaskr/adcomp/TMB", INSTALL_opts = "--no-staged-install")
