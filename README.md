@@ -66,8 +66,8 @@ It also provides R on an Ubuntu installation for any other purpose.
      # (There will be a different default color scheme.)
      
      
-     # Make yourself root to do the following installs using the password set above (the '$' prompt will change to '#', type < exit > to close) 
-     # (Mnemonic: 'The pound is stronger than the dollar.')
+     # Make yourself root to do the following installs using the password set above.
+     # The '$' prompt will change to '#', type < exit > to close. (Mnemonic: 'The pound is stronger than the dollar.')
      sudo su
      
      # First do an update
