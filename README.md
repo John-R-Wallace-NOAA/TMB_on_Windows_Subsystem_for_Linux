@@ -7,7 +7,7 @@ It also provides R on an Ubuntu installation for any other purpose.
      # Run PowerShell as Administrator (use search (the magnifier glass icon) and type < power > and click on 'Run as Administrator'
      # Right clicking in PowerShell will insert what previously has been copied into the clipboard inside or outside or the PowerShell.
      
-     # Change from C:\WINDOWS\system32 to c:\, if desired
+     # If the PowerShell starts in C:\WINDOWS\system32 the change to c:\, if desired
      cd ../.. 
      
      # In the PowerShell first enable wsl to be installed in Windows:
