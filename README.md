@@ -1,6 +1,6 @@
-Instructions to install the TMB ( https://github.com/kaskr/adcomp ) R package running under Ubuntu using WSL (Windows Subsystem for Linux).
+Instructions to install the TMB R package (https://github.com/kaskr/adcomp) running under Ubuntu using WSL (Windows Subsystem for Linux).
 This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows as the main OS.
-It also provides R on an Ubuntu installation with GDB debugging software for any other purpose.
+It also provides R on an Ubuntu installation with GDB debugging software for any other purpose. For those with a different Ubuntu installation such as a dual-boot PC or a bootable thumb drive, jumping past the WSL instuctions will give a guide to installing the folowing apps on Ubuntu release 18.04: curl, libssl-dev (for the httr R package), GDB, and the most recent version of R.
 
      # You will need to be an administrator on your Windows machine to install WSL.
      
