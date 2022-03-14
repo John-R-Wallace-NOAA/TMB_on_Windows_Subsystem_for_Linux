@@ -24,14 +24,14 @@ It also provides R on an Ubuntu installation with GDB debugging software for any
      
      # A new window will open. Enter a user name and password. A (very) short password be accepted (a single space will do) 
      #   and will be faster to type when needing elevated rights.
-     # Exit out of the new window by typing < exit > and then start WSL in the PowerShell
+     # Exit out of the new window by typing < exit > and then start WSL in the PowerShell. < exit > also exits out of WSL.
      PS> wsl
      
      # If nothing happens when typing 'wsl' or the wrong distribution is opened, enter:
      PS> wsl -l
      PS> wsl -s Ubuntu-18.04
      
-     # < wsl -s > sets the given distribution as the default. Now try WSL again
+     # < wsl -s > sets the given distribution as the default. Now try WSL again:
      PS> wsl 
      
      # Check Ubuntu version (note that this flavor of Ubuntu is 'Bionic')
