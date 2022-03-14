@@ -16,7 +16,7 @@ It also provides R on an Ubuntu installation with GDB debugging software for any
      # For help with the wsl command do:
      PS> wsl --help
      
-     # Get a list of valid distributions
+     # Get a list of valid distributions. Ubuntu 20.04 is available but may have issues.
      PS> wsl  --list --online
      
      # Install Ubuntu-18.04 into wsl by entering  :
@@ -46,6 +46,7 @@ It also provides R on an Ubuntu installation with GDB debugging software for any
      # Create a change directory command in .bashrc to run at startup. '.bashrc' needs to be in the home folder (~).
      cd ~
      echo 'cd /mnt/c/TMB_Debug' > .bashrc
+     ls -al
      
      # For now, change to this directory manually
      cd /mnt/c/TMB_Debug
