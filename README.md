@@ -252,7 +252,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      pie(rep(1, 24), col = rainbow(24), radius = 0.9)
      dev.cur()
      
-     # After trying out this installation, I ended up extra 'VcXsrv windows xserver' entries in 
+     # After trying out this installation, I ended up with extra 'VcXsrv windows xserver' entries in 
      #    the Windows Defender Firewall > Advanced Settings > Inbound Rules section.
      # I deleted the extra entries and left only one entry turned on (with white check mark within a green circle). 
      #    After this change the X server worked fine (perhaps with reboot).
