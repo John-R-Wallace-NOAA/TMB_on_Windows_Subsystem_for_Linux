@@ -271,8 +271,8 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      # Right-clicking within the Mintty terminal gives a menu with standard commands such as 'Copy' and 'Paste' (unlike PowerShell).
      
      
-     # The background color, text size and color (called the foreground color in Mintty), and other options for both  PowerShell 
-     #   and Mintty are user configurable by right-clicking of the top bar and going to 'Properties' or 'Options', respectively.
+     # The background color, text size and color (called the foreground color in Mintty), and other options for both PowerShell 
+     #   and Mintty are user configurable by right-clicking the top bar and going to 'Properties' or 'Options', respectively.
      
      
 
