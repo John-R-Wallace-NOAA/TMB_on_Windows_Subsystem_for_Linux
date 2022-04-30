@@ -203,7 +203,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      # Install the VcXsrv Windows X Server
      #     https://sourceforge.net/projects/vcxsrv/   
      
-     # Setup VcXsrv following video below stopping around the 5:17 mark since the rest will be covered below using
+     # Setup VcXsrv following the video below stopping around the 5:17 mark since the rest will be covered below using
      #   the shorter export DISPLAY command given by Comment 190 on the stackoverflow website.
      
      # Also, the XLaunch file talked about in the video does not need to be edited since < DisableAC = "True" > is sufficient 
