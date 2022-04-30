@@ -272,7 +272,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
      
      # The background color, text size and color (called the foreground color in Mintty), and other options for both  PowerShell 
-     #   and Mintty are user configurable  by right-clicking of the top bar and going to 'Properties' or 'Options', respectively.
+     #   and Mintty are user configurable by right-clicking of the top bar and going to 'Properties' or 'Options', respectively.
      
      
 
