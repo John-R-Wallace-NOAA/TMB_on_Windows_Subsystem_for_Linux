@@ -276,4 +276,4 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
      
 
-![R X11 on Ubuntu under WSL](https://user-images.githubusercontent.com/6854617/166086930-d16404e8-093e-4270-87c1-4f89a7a37a6c.png)
+![R X11 on Ubuntu under WSL](https://github.com/John-R-Wallace-NOAA/TMB_on_Windows_Subsystem_for_Linux/blob/main/R%20X11%20on%20Ubuntu%20under%20WSL.png)
