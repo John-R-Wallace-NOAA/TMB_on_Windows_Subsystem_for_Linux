@@ -246,7 +246,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      xeyes &
      xclock &
      
-     # If that works start R to obtain the pie chart seen in the picture below:
+     # If that works start R and run the code to obtain the pie chart seen in the picture below:
      R
      require(grDevices)
      pie(rep(1, 24), col = rainbow(24), radius = 0.9)
