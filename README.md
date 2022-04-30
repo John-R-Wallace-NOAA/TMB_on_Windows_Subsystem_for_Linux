@@ -201,7 +201,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      #     https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2  
      
      # Install the VcXsrv Windows X Server
-     https://sourceforge.net/projects/vcxsrv/   
+     #     https://sourceforge.net/projects/vcxsrv/   
      
      # Setup VcXsrv following video below stopping around the 5:17 mark since the rest will be covered below using
      #   the shorter export DISPLAY command given by Comment 190 on the stackoverflow website.
