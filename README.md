@@ -192,5 +192,88 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
      # Jump back to C:\TMB_Debug in the open Window's File Explorer and view the 2 figures in 'Rplots.pdf'.
      
+---
 
+     
+     # -- Enable the X11cairo graphics device under R --
+     
+     # Loosely following information obtained here
+     #     https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2  
+     
+     # Install the VcXsrv Windows X Server
+     https://sourceforge.net/projects/vcxsrv/   
+     
+     # Setup VcXsrv following video below stopping around the 5:17 mark since the rest will be covered below using
+     #   the shorter export DISPLAY command given by Comment 190 on the stackoverflow website.
+     
+     # Also, the XLaunch file talked about in the video does not need to be edited since < DisableAC = "True" > is sufficient 
+     #   and < ExtraParams'"-ac" > is not needed.
+     #     https://www.youtube.com/watch?v=6_mbd1hvUnE
+     
+     
+     # Back in Ubnutu under WSL:
+       
+     # # The goal for the export commands is to extract the IP address of the X Terminal, e.g.
+     ip route list default | awk '{print $3}' 
+     # 172.27.224.1
+     
+     # and add the following two lines to the export environment:
+     #   declare -x WSL_HOST_IP="172.27.224.1"
+     #   declare -x LIBGL_ALWAYS_INDIRECT="1"
+     export
+     
+     # This is done at login by adding the following lines to ~/.bashrc:
+     #   export DISPLAY=$(ip route list default | awk '{print $3}'):0
+     #   export LIBGL_ALWAYS_INDIRECT=1
+     
+     # The following echo commands will easily add the exports to ~/.bashrc:
+     cd ~
+     echo 'export DISPLAY=$(ip route list default | awk '"'"'{print $3}'"'"'):0' >> .bashrc
+     echo 'export LIBGL_ALWAYS_INDIRECT=1' >> .bashrc
+     
+     # Install the x11-apps
+     sudo su
+     apt update
+     apt -y install x11-apps
+     exit
+     
+     # With the VcXsrv X Server running and the icon in the Taskbar, restart the PowerShell or Ubuntu via Wsltty (see below)
+     # Check for the added export commands
+     export | grep DISPLAY
+     export | grep LIBGL_ALWAYS
+     
+     # Try xeyes and xclock ('&' puts the app directly into the background)
+     xeyes &
+     xclock &
+     
+     # If that works start R and try:
+     R
+     require(grDevices)
+     pie(rep(1, 24), col = rainbow(24), radius = 0.9)
+     dev.cur()
+     
+     # After trying out this installation, I ended up extra 'VcXsrv windows xserver' entries in 
+     #    the Windows Defender Firewall > Advanced Settings > Inbound Rules section.
+     # I deleted the extra entries and left only one entry turned on (with white check mark within a green circle). 
+     #    After this change the X server worked fine (perhaps with reboot).
+     # While troubleshooting, I temporarily turned off the Windows Firewall Defender and the X server also worked then.
+     
+     
+     # For direct launching of Ubuntu from Windows install Mintty as a terminal for WSL:
+     https://github.com/mintty/wsltty
+     
+     # Go up one level for a look at the entire repo:
+     https://github.com/mintty
+     
+     # Additional information can be found on the website given:
+     http://mintty.github.io/
+     
+     # Right-clicking within the Mintty terminal gives a menu with standard commands such as 'Copy' and 'Paste' (unlike PowerShell).
+     
+     
+     # The background color, text size and color (called the foreground color in Mintty), and other options for both  PowerShell 
+     #   and Mintty are user configurable  by right-clicking of the top bar and going to 'Properties' or 'Options', respectively.
+     
+     
 
+![R X11 on Ubuntu under WSL](https://user-images.githubusercontent.com/6854617/166086930-d16404e8-093e-4270-87c1-4f89a7a37a6c.png)
