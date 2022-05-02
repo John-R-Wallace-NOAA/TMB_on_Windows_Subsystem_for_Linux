@@ -197,14 +197,17 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
      # -- Enable the X11cairo graphics device under R --
      
-     # Loosely following information obtained here
+     # Loosely following the early information here
      #     https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2  
+     # But note that a comment points out that the extra inbound rule is only needed if you want to avoid allowing access for all public networks.
+     # So don't deal with the Windows firewall (if at all) until this installation is finished, since the install of VcXsrv adds inbound rules for you. 
+     # Also see the comment about my firewall issues below.  
      
      # Install the VcXsrv Windows X Server
      #     https://sourceforge.net/projects/vcxsrv/   
      
      # Setup VcXsrv following the video below stopping around the 5:17 mark since the rest will be covered below using
-     #   the shorter export DISPLAY command given by Comment 190 on the stackoverflow website.
+     #   the shorter export DISPLAY command given by Comment 190 on the stackoverflow website given above.
      
      # Also, the XLaunch file talked about in the video does not need to be edited since < DisableAC = "True" > is sufficient 
      #   and < ExtraParams'"-ac" > is not needed.
@@ -252,12 +255,12 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      pie(rep(1, 24), col = rainbow(24), radius = 0.9)
      dev.cur()
      
-     # After trying out this installation, I ended up with extra 'VcXsrv windows xserver' entries in 
+     # After some failed attempts at this installation, I ended up with extra 'VcXsrv windows xserver' entries in 
      #    the Windows Defender Firewall > Advanced Settings > Inbound Rules section.
      # I deleted the extra entries and left only one entry turned on (with white check mark within a green circle). 
      #    After this change the X server worked fine (perhaps with reboot).
      # While troubleshooting, I temporarily turned off the Windows Firewall Defender and the X server also worked then.
-     
+     # Note also, that right-clicking on the Inbound rules allows settings to be changed.
      
      # For direct launching of Ubuntu from Windows install Mintty as a terminal for WSL:
      https://github.com/mintty/wsltty
