@@ -1,6 +1,8 @@
 Instructions to install the TMB R package (https://github.com/kaskr/adcomp) running under command-line Ubuntu using WSL (Windows Subsystem for Linux).
 This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows 10 as the main OS.
-It also provides R on an Ubuntu installation with GDB debugging software for any other purpose. For those with a different Ubuntu installation such as a dual-boot PC or VirtualBox, jumping past the WSL instuctions will give a guide to installing the folowing apps on Ubuntu release 18.04: curl, libssl-dev (for the httr R package), GDB, and the most recent version of R. 
+It also provides R on an Ubuntu installation with GDB debugging software for any other purpose. 
+
+For those with a different Ubuntu installation such as a dual-boot PC or VirtualBox, jumping past the WSL instuctions will give a guide to installing the folowing apps on Ubuntu release 18.04: curl, libssl-dev (for the httr R package), GDB, and the most recent version of R. 
 
 WSL saves all the software in a single folder which can be used for computational reproducibility, exporting to another machine, or sharing with a colleague. The path to the WSL folder is given below. See also:
 
@@ -197,20 +199,22 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
      # -- Enable the X11cairo graphics device under R --
      
-     # Loosely following the early information here
-     #     https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2  
-     # But note that a comment points out that the extra inbound rule is only needed if you want to avoid allowing access for all public networks.
-     # So don't deal with the Windows firewall (if at all) until this installation is finished, since the install of VcXsrv adds inbound rules for you. 
-     # Also see the comment about my firewall issues below.  
+     # Loosely following the early information here:
+     #     https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
      
-     # Install the VcXsrv Windows X Server
+     # But note that a comment points out that the extra inbound rule is only needed if you want to avoid allowing access for all
+     #   public networks. So don't deal with the Windows firewall (if at all) until this installation is finished, since the 
+     #   install of VcXsrv adds inbound rules for you. Also see the comment about my firewall issues below.  
+     
+     # Install the VcXsrv Windows X Server:
      #     https://sourceforge.net/projects/vcxsrv/   
      
      # Setup VcXsrv following the video below stopping around the 5:17 mark since the rest will be covered below using
-     #   the shorter export DISPLAY command given by Comment 190 on the stackoverflow website given above.
+     #   the shorter export DISPLAY command given by Comment 190 on the Stack Overflow website given above.
      
      # Also, the XLaunch file talked about in the video does not need to be edited since < DisableAC = "True" > is sufficient 
      #   and < ExtraParams'"-ac" > is not needed.
+     
      #     https://www.youtube.com/watch?v=6_mbd1hvUnE
      
      
