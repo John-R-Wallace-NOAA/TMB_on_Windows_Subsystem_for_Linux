@@ -203,7 +203,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      #     https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
      
      # But note that a comment points out that the extra inbound rule is only needed if you want to avoid allowing access for all
-     #   public networks. So don't deal with the Windows firewall (if at all) until this installation is finished, since the 
+     #   public networks. So don't deal with the Windows firewall (if at all) until this installation is finished since the 
      #   install of VcXsrv adds inbound rules for you. Also see the comment about my firewall issues below.  
      
      # Install the VcXsrv Windows X Server:
