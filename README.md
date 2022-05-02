@@ -253,7 +253,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      xeyes &
      xclock &
      
-     # If that works start R and run the code to obtain the pie chart seen in the picture below:
+     # If that works start R and run the following code to obtain the pie chart seen in the picture below:
      R
      require(grDevices)
      pie(rep(1, 24), col = rainbow(24), radius = 0.9)
@@ -265,6 +265,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      #    After this change the X server worked fine (perhaps with reboot).
      # While troubleshooting, I temporarily turned off the Windows Firewall Defender and the X server also worked then.
      # Note also, that right-clicking on the Inbound rules allows settings to be changed.
+     
      
      # For direct launching of Ubuntu from Windows install Mintty as a terminal for WSL:
      https://github.com/mintty/wsltty
