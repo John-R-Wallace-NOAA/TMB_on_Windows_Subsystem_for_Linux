@@ -140,7 +140,6 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      # remotes::install_github("kaskr/adcomp/TMB", INSTALL_opts = "--no-staged-install")
      
      # Test TMB
-     
      library(TMB)
      runExample('simple')
      opt
@@ -171,16 +170,22 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
  ---     
       
-     # Create a .Rprofile file to auto load TMB on the search() path (and the MASS package as another example) on R startup
+     # Create a .Rprofile file to auto load TMB onto the search() path (and the MASS package, as another example) on R startup.
      #     Provide your GITHUB_PAT from GitHub and uncomment the line to auto add to the 
-     #         R system environment (use Sys.getenv('GITHUB_PAT') to view) 
-     #     cf. /etc/R/Rprofile.site which is more global
+     #         R system environment (use Sys.getenv('GITHUB_PAT') to view).
+     #     Do not share your WSL file folder with your GITHUB_PAT intact.
+     #     The CRAN repository and line width (= 140) are also set.
+     #     cf. /etc/R/Rprofile.site which is more global.
      echo 'r <- getOption("repos")' > /mnt/c/TMB_Debug/.Rprofile
      echo 'r["CRAN"] <- "https://cloud.r-project.org"' >> /mnt/c/TMB_Debug/.Rprofile
      echo 'old <- getOption("defaultPackages")' >> /mnt/c/TMB_Debug/.Rprofile
      echo 'options(repos = r, width = 140, defaultPackages = c(old, "MASS", "TMB"))' >> /mnt/c/TMB_Debug/.Rprofile
      echo 'rm(r, old)' >> /mnt/c/TMB_Debug/.Rprofile
      # echo 'Sys.setenv(GITHUB_PAT="Your GITHUB_PAT here")' >> /mnt/c/TMB_Debug/.Rprofile
+     
+     R
+     search()
+     Sys.getenv('GITHUB_PAT')
      
 ---
      
