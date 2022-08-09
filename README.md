@@ -171,6 +171,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
  ---     
  
      # -- Create a .Rprofile file to autoload TMB onto the search() path (and the MASS package, as another example) on R startup. --
+     
      #     Provide your GITHUB_PAT from GitHub and uncomment the line to auto add to the 
      #         R system environment (use Sys.getenv('GITHUB_PAT') to view).
      #     Do not share your WSL file folder with your GITHUB_PAT intact.
