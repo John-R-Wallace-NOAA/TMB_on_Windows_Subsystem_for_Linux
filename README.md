@@ -208,7 +208,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      dev.cur()
      butterfly(2.5, 12, col = 'green')
      dev.off()
-     browseURL('Rplots.pdf')  # Alternatively, jump back to C:\TMB_Debug in Window's File Explorer and view the 2 figures in 'Rplots.pdf'.
+     browseURL('Rplots.pdf') # Alternatively, jump back to C:\TMB_Debug in Window's File Explorer and view the 2 figures in 'Rplots.pdf'
      
 ---
 
