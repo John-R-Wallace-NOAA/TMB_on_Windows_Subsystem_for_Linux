@@ -189,7 +189,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
 ---
      
-     # --  pdf() is the defalut plotting device when the X11cairo graphics device is not installed (see the next section) --
+     # -- pdf() is the defalut plotting device when the X11cairo graphics device is not installed (see the next section) --
      
      butterfly <- function (alpha = 4, beta = 12, plot = TRUE, ...) {
      
