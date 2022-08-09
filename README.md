@@ -191,7 +191,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
 ---
      
      # -- Extra --
-     # The defalut plotting device is 'pdf'
+     # Note that the defalut plotting device is 'pdf'.
      
      butterfly <- function (alpha = 4, beta = 12, plot = TRUE, ...) {
      
