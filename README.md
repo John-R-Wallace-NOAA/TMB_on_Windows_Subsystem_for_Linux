@@ -170,8 +170,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
  ---     
  
-     # -- Extra -- 
-     # Create a .Rprofile file to autoload TMB onto the search() path (and the MASS package, as another example) on R startup.
+       # -- Create a .Rprofile file to autoload TMB onto the search() path (and the MASS package, as another example) on R startup. --
      #     Provide your GITHUB_PAT from GitHub and uncomment the line to auto add to the 
      #         R system environment (use Sys.getenv('GITHUB_PAT') to view).
      #     Do not share your WSL file folder with your GITHUB_PAT intact.
@@ -190,8 +189,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
 ---
      
-     # -- Extra --
-     # Note that the defalut plotting device is 'pdf'.
+     # --  pdf() is the defalut plotting device when the X11cairo graphics device is not installed (see the next section) --
      
      butterfly <- function (alpha = 4, beta = 12, plot = TRUE, ...) {
      
@@ -210,8 +208,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      dev.cur()
      butterfly(2.5, 12, col = 'green')
      dev.off()
-     
-     # Jump back to C:\TMB_Debug in the open Window's File Explorer and view the 2 figures in 'Rplots.pdf'.
+     browseURL('Rplots.pdf')  # Alternatively, jump back to C:\TMB_Debug in Window's File Explorer and view the 2 figures in 'Rplots.pdf'.
      
 ---
 
