@@ -114,13 +114,15 @@
      
      # -- Under Windows --
      
-     # If not already done, create the TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder in this repo to that folder
+     # If not already done, create the TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder in this repo to that folder.
      
-     # Running 64-bit R ver 4.2.1 with <C:\Rtools\mingw_64\bin> (64-bit gdb ver 7.9.1 is here) in the system path.  Rtools is version 3.5.0.4   ( FYI, system path also has <C:\Rtools\bin> before <C:\Rtools\mingw_64\bin>)
+     # Running 64-bit R ver 4.2.1 with <C:\Rtools\mingw_64\bin> (64-bit gdb ver 7.9.1 is here) in the system path.  
+     #    Rtools is version 3.5.0.4   ( FYI, system path also has <C:\Rtools\bin> before <C:\Rtools\mingw_64\bin>)
      setwd('C:/TMB_Debug')
      library(TMB)
      
-     if(file.exists('simpleError.o')) file.remove(c('simpleError.o')); if(file.exists('simpleError.dll')) file.remove(c('simpleError.dll')) # Windows dll 
+     if(file.exists('simpleError.o')) file.remove(c('simpleError.o'))
+     if(file.exists('simpleError.dll')) file.remove(c('simpleError.dll')) # Windows dll 
      compile('simpleError.cpp', "-O0 -g")
      
      # Sourcing 'simpleError.R' will crash R
@@ -154,7 +156,7 @@
      gdbsource('simpleError.R')
      Program returned without errors 
      
-     # "Program returned without errors" doesn't mean there are not errors, just that <at simpleError.cpp:30> is not present
+     # "Program returned without errors" doesn't mean there are not errors, just that <at simpleError.cpp:30> is not present.
      
      # Try using interactive command
      gdbsource('simpleError.R', interactive = TRUE)
@@ -164,7 +166,7 @@
      # Rterm: No such file or directory.
      # ...
      
-     # Having already dealt with the path for GDB, we use R.home()  in the upated .gdbsource.win()  code snippet below
+     # Having already dealt with the path for GDB, we use R.home() in the upated .gdbsource.win() code snippet below:
      
      file <- 'simpleError.R'
      gdbscript <- tempfile()
@@ -224,6 +226,9 @@
      
      - To edit the user system path on a Windows 10 machine search for 'env' and click on 'Edit environmental variables for your account'.
      
-     - gdb.exe is not available in RTools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). Using the system path given above still in works in R ver 4.2.1
-        RTools 4.2 has major changes with all executables now in the folder <x86_64-w64-mingw32.static.posix>. An empty skeleton of folders is still exists.
+     - gdb.exe appears not to be available in RTools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). 
+        Using the system path given above still in works in R ver 4.2.1
+        
+     - RTools 4.2 has major changes, with all executables now in the folder <x86_64-w64-mingw32.static.posix>. An empty skeleton
+          of folders still exists.
     
