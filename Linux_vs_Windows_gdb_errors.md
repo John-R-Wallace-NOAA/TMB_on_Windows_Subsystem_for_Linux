@@ -216,7 +216,7 @@
      (gdb)
      
      
-     # Note that there is no "\\ at\\ .*\\.cpp\\:[0-9]+" pattern  that gives the line number of error for print.backtrace() to find.
+     # Note that there is no "\\ at\\ .*\\.cpp\\:[0-9]+" pattern that gives the line number of the error for print.backtrace() to find.
      
      
      
