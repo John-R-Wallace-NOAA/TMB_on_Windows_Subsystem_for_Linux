@@ -61,10 +61,8 @@
      gdbsource('simpleError.R')
      Errors:
       #3  ... in objective_function<double>::operator() ... at simpleError.cpp:30
-     
-     ------- line 30 ----------
-     
-     # But lets look at the gdb output to compare to what we get under Windows
+          
+     # But lets look at the Linux gdb output to compare to what we get under Windows (see below)
      gdbsource('simpleError.R', interactive = TRUE)
      (gdb) run
      (gdb) bt
@@ -166,7 +164,7 @@
      # Rterm: No such file or directory.
      # ...
      
-     # Having already dealt with the path for GDB, we use R.home() in the upated .gdbsource.win() code snippet below:
+     # Having already dealt with the path for GDB, I used R.home() in the upated .gdbsource.win() code snippet below:
      
      file <- 'simpleError.R'
      gdbscript <- tempfile()
@@ -178,7 +176,7 @@
      cmd <- paste("start", cmd)
              shell(cmd)
      
-     # which gives:
+     # which immediately (no gdb commands given) gives:
      
      TMB has received an error from Eigen. The following condition was not met:
      index >= 0 && index < size()
