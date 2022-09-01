@@ -5,7 +5,8 @@
      
      # After learning the bascis of the gdb language from here:  https://betterexplained.com/articles/debugging-with-gdb/ 
      #       and http://manpages.ubuntu.com/manpages/trusty/man1/gdb.1.html
-     # the commands given to gdb under Linux can be seen in the first line of the non-interactive section at the bottom of TMB::gdbsource():
+     #   the commands given to gdb under Linux can be seen in the first line of the non-interactive section 
+     #   at the bottom of TMB::gdbsource():
      
      gdbsource
      function (file, interactive = FALSE) 
@@ -45,8 +46,10 @@
      # In WSL Linux R run:
      library(TMB)
      
-     # In straight Linux, create a TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder in this repo to that folder. 
-     #    setwd() to the TMB_Debug folder
+     # In straight Linux
+     #   - create a TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder 
+     #        in this repo to that folder. 
+     #   - setwd() to the TMB_Debug folder
      
      if(file.exists('simpleError.o')) file.remove(c('simpleError.o')); if(file.exists('simpleError.so')) file.remove(c('simpleError.so')) 
      compile('simpleError.cpp', "-O0 -g")
