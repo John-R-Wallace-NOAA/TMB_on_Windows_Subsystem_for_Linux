@@ -18,8 +18,8 @@
       
 - RTools 4.0 and 4.2 use an environment variable: "RTOOLS4X_HOME" which gives the path of where Rtools 4.X is located (defaults to C:\rtools4X).
  
-- On R ver 4.2.1 the environment path is then prepended with: C:\rtools42/x86_64-w64-mingw32.static.posix/bin and C:\rtools42/usr/bin 
-   and in R:
+- On R ver 4.2.1 the environment path inside of R is then prepended with: C:\rtools42/x86_64-w64-mingw32.static.posix/bin and C:\rtools42/usr/bin 
+    (use shell('start cmd') and type 'path' in the cmd window to look at the path created), and in R:
    
       Sys.which('g++')  # gives:
                                                                 g++ 
