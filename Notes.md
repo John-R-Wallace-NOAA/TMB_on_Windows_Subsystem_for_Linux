@@ -12,7 +12,7 @@
     However, I was unable to get the backtrace to work like gdb version 7.9.1. The 10.2 version only stated that:
     "Backtrace stopped: previous frame identical to this frame (corrupt stack?)"
     
-- RTools 4.2 has major changes, with all executables now in the folders 'x86_64-w64-mingw32.static.posix' or 'C:\rtools42/usr/bin'. An empty skeleton
+- RTools 4.2 has major changes, with all executables now in the folders 'x86_64-w64-mingw32.static.posix' or 'C:\rtools42/usr/bin', however an empty skeleton
       of folders still exists. Also, "All libraries are included, instead of relying on external sources for downloading them. 
       Rtools42 takes slightly over 3G when installed."
       
