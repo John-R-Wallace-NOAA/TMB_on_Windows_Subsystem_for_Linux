@@ -1,5 +1,5 @@
 
-- Since Jeroen Ooms took over maintaining Rtools from Prof. Brian Ripley and Duncan Murdoch gdb.exe has not been available in 
+- Since Jeroen Ooms took over maintaining Rtools from Prof. Brian Ripley and Duncan Murdoch, gdb.exe has not been available in 
     RTools 4.0 nor in Rtools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). 
 
 - Mark Bravington tried to add gdb to RTOOLS40 on Windows 10 without success: https://stat.ethz.ch/pipermail/r-devel/2021-April/080623.html . 
