@@ -37,7 +37,7 @@
 - StackOverFlow: https://stackoverflow.com/questions/18407563/gcc-doesnt-produce-line-number-information-even-with-g-option
    points out a dwarf4 versus dwarf2 issue under Linux (which may be @iperedaagirre's issue) but didn't help me with line numbers under Windows.
    
-- With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers and hence the reason for this repo.     
+- With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers and hence the reason for this WSL repo.     
    
 - To edit the user system path and other variables on a Windows 10 machine without Admin rights, search for 'env' and 
        click on 'Edit environmental variables for your account'.
