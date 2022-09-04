@@ -3,7 +3,7 @@
     RTools 4.0 nor in Rtools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). 
     
 - Mark Bravington tried to add gdb to RTOOLS40 on Windows 10 without success (https://stat.ethz.ch/pipermail/r-devel/2021-April/080623.html).
-       Tomas Kalibera pointed out that gdb in the Rtools 3.5 installation can still be used, as I have done for R ver 4.2.1 (see Linux_vs_Windows_gdb_errors.md). 
+       Tomas Kalibera points out that gdb in the Rtools 3.5 installation can still be used, as I have done for R ver 4.2.1 (see Linux_vs_Windows_gdb_errors.md). 
        As Mark points out, it does not work to just copy over gdb.exe ver 7.9.1. (I also tried older RTools gdb.exe versions without success.)
     
 - A standalone gdb.exe ver 10.2 that does work with R ver 4.2.1 is here: http://www.equation.com/servlet/equation.cmd?fa=gdb
