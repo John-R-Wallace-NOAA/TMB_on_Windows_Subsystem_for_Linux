@@ -1,16 +1,18 @@
 
 - Since Jeroen Ooms took over maintaining Rtools from Prof. Brian Ripley and Duncan Murdoch gdb.exe has not been available in 
     RTools 4.0 nor in Rtools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). 
+
+- Mark Bravington tried to add gdb to RTOOLS40 on Windows 10 without success: https://stat.ethz.ch/pipermail/r-devel/2021-April/080623.html . 
+
+   - Tomas Kalibera pointed out in response that gdb in the Rtools 3.5 installation can still be used, as I have done for R ver 4.2.1 (see Linux_vs_Windows_gdb_errors.md). 
+      
+    - As Mark points out, it does not work to just copy over gdb.exe from Rtools 3.5 (ver 7.9.1). (I also tried older RTools gdb.exe versions without success.)
     
-- Mark Bravington tried to add gdb to RTOOLS40 on Windows 10 without success: https://stat.ethz.ch/pipermail/r-devel/2021-April/080623.html .
-       Tomas Kalibera pointed out in response that gdb in the Rtools 3.5 installation can still be used, as I have done for R ver 4.2.1 (see Linux_vs_Windows_gdb_errors.md). 
-       As Mark points out, it does not work to just copy over gdb.exe from Rtools 3.5 (ver 7.9.1). (I also tried older RTools gdb.exe versions without success.)
-    
-- A standalone gdb.exe ver 10.2 that does work with R ver 4.2.1 is here: < http://www.equation.com/servlet/equation.cmd?fa=gdb >.
+- A standalone gdb.exe ver 10.2 that does work with R ver 4.2.1 is here: http://www.equation.com/servlet/equation.cmd?fa=gdb . 
     However, I was unable to get the backtrace to work like gdb version 7.9.1 (from Rtools 3.5). The 10.2 version only stated that:
     "Backtrace stopped: previous frame identical to this frame (corrupt stack?)"
     
-- RTools 4.2 has major changes, with all executables now in the folders 'x86_64-w64-mingw32.static.posix' and 'C:\rtools42/usr/bin'. An empty skeleton
+- RTools 4.2 has major changes, with all executables now in the folders 'x86_64-w64-mingw32.static.posix' or 'C:\rtools42/usr/bin'. An empty skeleton
       of folders still exists. Also, "All libraries are included, instead of relying on external sources for downloading them. 
       Rtools42 takes slightly over 3G when installed."
       
@@ -23,7 +25,7 @@
                                    make 
       "W:\\rtools42\\usr\\bin\\make.exe" 
    
-- On my devices 4.0.X and 4.1.X do not prepend the path and 
+- On my devices R ver 4.0.X and 4.1.X with RTools 4.0 do not prepend the path and 
 -    
       Sys.which('make') # gives:
                             make 
