@@ -2,7 +2,7 @@ Below are instructions to install the TMB R package (https://github.com/kaskr/ad
 This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows 10 as the main OS.
 It also provides R on an Ubuntu installation with GDB debugging software for any other purpose. 
 
-See Linux_vs_Windows_gdb_errors.md in this repo for a comparison of the Linux and Windows gdb error reports.
+See Linux_vs_Windows_gdb_errors.md in this repo for a comparison of the Linux and Windows gdb error reports and see the Notes.md for other information.
 
 For those with a different Ubuntu installation such as a dual-boot PC or VirtualBox, jumping past the WSL instuctions will give a guide to installing the folowing apps on Ubuntu release 18.04: curl, libssl-dev (for the httr R package), GDB, and the most recent version of R. 
 
