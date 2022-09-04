@@ -8,7 +8,7 @@
      #   the commands given to gdb under Linux can be seen in the first line of the non-interactive section 
      #   at the bottom of TMB::gdbsource():
      
-     gdbsource
+     TMB::gdbsource
      function (file, interactive = FALSE) 
      {
          if (!file.exists(file)) 
@@ -41,17 +41,20 @@
      #  < cat("run\nbt\nquit\n", file = gdbscript) > gives the gdb commands that can be used in the gdbsource()  interactive mode:
      (gdb) run
      (gdb) bt  # backtrace
+     (gdb) ...
      (gdb) quit 
      
      # In WSL Linux R run:
+     setwd("/mnt/c/TMB_Debug")
      library(TMB)
      
      # In straight Linux
      #   - create a TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder 
-     #        in this repo to that folder. 
+     #          in this repo to that folder. 
      #   - setwd() to the TMB_Debug folder
      
-     if(file.exists('simpleError.o')) file.remove(c('simpleError.o')); if(file.exists('simpleError.so')) file.remove(c('simpleError.so')) 
+     if(file.exists('simpleError.o')) file.remove(c('simpleError.o'))
+     if(file.exists('simpleError.so')) file.remove(c('simpleError.so')) 
      compile('simpleError.cpp', "-O0 -g")
      
      # Sourcing 'simpleError.R' will crash R
@@ -95,7 +98,7 @@
          rtld_fini=<optimized out>, stack_end=0x7fffffffde68) at ../csu/libc-start.c:310
      #23 0x000055555540087a in _start ()
      
-     # Note the line #3 gives the file name and the line that the error occurs (at simpleError.cpp:30)
+     # Note the line #3 gives the file name and the line that the error occurs:  "at simpleError.cpp:30"
      
      # TMB::print.backtrace() greps that pattern and returns the line number the error occurs on
      function (x, ...) 
@@ -108,14 +111,13 @@
          cat(paste(x, "\n"))
      }
      
-     
-     
+          
      # -- Under Windows --
      
      # If not already done, create the TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder in this repo to that folder.
      
-     # Running 64-bit R ver 4.2.1 with <C:\Rtools\mingw_64\bin> (64-bit gdb ver 7.9.1 is here) in the system path.  
-     #    Rtools is version 3.5.0.4   ( FYI, system path also has <C:\Rtools\bin> before <C:\Rtools\mingw_64\bin>)
+     # Running 64-bit R ver 4.2.1 with <C:\Rtools\mingw_64\bin> (where 64-bit gdb ver 7.9.1 is found) in the system path.  
+     #      Rtools is version 3.5.0.4   (FYI, the system path also has <C:\Rtools\bin> before <C:\Rtools\mingw_64\bin>)
      setwd('C:/TMB_Debug')
      library(TMB)
      
@@ -164,17 +166,17 @@
      # Rterm: No such file or directory.
      # ...
      
-     # Having already dealt with the path for GDB, I used R.home() in the upated .gdbsource.win() code snippet below:
+     # Having already dealt with the path for GDB, I used Sys.which() in the upated .gdbsource.win() code snippet below:
      
      file <- 'simpleError.R'
      gdbscript <- tempfile()
-         txt <- paste("set breakpoint pending on\nb abort\nrun --vanilla -f", 
-             file, "\nbt\n")
-         cat(txt, file = gdbscript)
-     (cmd <- paste0("gdb ", R.home(), "/bin/x64/Rterm.exe -x ", gdbscript))
+     txt <- paste("set breakpoint pending on\nb abort\nrun --vanilla -f", file, "\nbt\n")
+     cat(txt, file = gdbscript)
+     # file.show(gdbscript)  # Look at the commands in gdbscript temp file, if desired.
      
-     cmd <- paste("start", cmd)
-             shell(cmd)
+     cmd <- paste0("gdb ", Sys.which('Rterm'), " -x ", gdbscript)
+     (cmd <- paste("start", cmd))
+     shell(cmd)
      
      # which immediately (no gdb commands given) gives:
      
@@ -218,15 +220,4 @@
      
      # Note that there is no "\\ at\\ .*\\.cpp\\:[0-9]+" pattern that gives the line number of the error for print.backtrace() to find.
      
-     
-     
-     # Notes
-     
-     - To edit the user system path on a Windows 10 machine search for 'env' and click on 'Edit environmental variables for your account'.
-     
-     - gdb.exe appears not to be available in RTools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). 
-        Using the system path given above still in works in R ver 4.2.1
-        
-     - RTools 4.2 has major changes, with all executables now in the folder <x86_64-w64-mingw32.static.posix>. An empty skeleton
-          of folders still exists.
     
