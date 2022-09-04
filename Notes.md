@@ -22,14 +22,14 @@
    and in R:
    
       Sys.which('g++') #  gives:
-                                                               g++ 
-     "W:\\rtools42\\x86_64-w64-mingw32.static.posix\\bin\\g++.exe" 
+                                                                g++ 
+      "W:\\rtools42\\x86_64-w64-mingw32.static.posix\\bin\\g++.exe" 
    
 - On my devices R ver 4.0.X and 4.1.X with RTools 4.0 do not prepend the path and 
    
       Sys.which('g++') # gives:
-                                     g++ 
-    "W:\\Rtools\\mingw_64\\bin\\g++.exe"
+                                       g++ 
+      "W:\\Rtools\\mingw_64\\bin\\g++.exe"
    
   since Rtools/mingw_64/Rtools/bin is still in the path.
   
