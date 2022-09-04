@@ -17,25 +17,27 @@
 - RTools 4.0 and 4.2 use an environment variable: "RTOOLS4X_HOME" which gives the path of where Rtools 4.X is located (defaults to C:\rtools4X).
  
 - On R ver 4.2.1 the environment path is then prepended with: C:\rtools42/x86_64-w64-mingw32.static.posix/bin and C:\rtools42/usr/bin 
-   and in R,
-   Sys.which('make') #  gives:
-                                 make 
-   "W:\\rtools42\\usr\\bin\\make.exe" 
+   and in R:
    
-- On my devices 4.0.X and 4.1.X do not prepend the path and    
-   Sys.which('make') gives:
-                         make 
-   "c:\\Rtools\\bin\\make.exe" 
+      Sys.which('make') #  gives:
+                                   make 
+      "W:\\rtools42\\usr\\bin\\make.exe" 
+   
+- On my devices 4.0.X and 4.1.X do not prepend the path and 
+-    
+      Sys.which('make') # gives:
+                            make 
+      "c:\\Rtools\\bin\\make.exe" 
    
   since Rtools\bin is further down the path.
   
-- Note however that with a clean install of R ver 4.2.1 and Rtools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows
+- However with a clean install of R ver 4.2.1 and Rtools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows
     will fail due to a missing gdb.exe.
     
 - StackOverFlow: https://stackoverflow.com/questions/18407563/gcc-doesnt-produce-line-number-information-even-with-g-option
    points out a dwarf4 versus dwarf2 issue under Linux (which may be @iperedaagirre's issue) but didn't help me with line numbers under Windows.
    
-- With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers     
+- With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers and hence the reason for this repo.     
    
 - To edit the user system path and other variables on a Windows 10 machine without Admin rights, search for 'env' and 
        click on 'Edit environmental variables for your account'.
