@@ -21,17 +21,17 @@
 - On R ver 4.2.1 the environment path is then prepended with: C:\rtools42/x86_64-w64-mingw32.static.posix/bin and C:\rtools42/usr/bin 
    and in R:
    
-      Sys.which('make') #  gives:
-                                   make 
-      "W:\\rtools42\\usr\\bin\\make.exe" 
+      Sys.which('g++') #  gives:
+                                                               g++ 
+     "W:\\rtools42\\x86_64-w64-mingw32.static.posix\\bin\\g++.exe" 
    
 - On my devices R ver 4.0.X and 4.1.X with RTools 4.0 do not prepend the path and 
--    
-      Sys.which('make') # gives:
-                            make 
-      "c:\\Rtools\\bin\\make.exe" 
    
-  since Rtools\bin is further down the path.
+      Sys.which('g++') # gives:
+                                     g++ 
+    "W:\\Rtools\\mingw_64\\bin\\g++.exe"
+   
+  since Rtools/mingw_64/Rtools/bin is still in the path.
   
 - However with a clean install of R ver 4.2.1 and Rtools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows
     will fail due to a missing gdb.exe.
