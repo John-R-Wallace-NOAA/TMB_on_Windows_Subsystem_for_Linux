@@ -9,7 +9,7 @@
     
 - A Windows standalone gdb.exe ver 10.2 that does work with R ver 4.2.1 is here: http://www.equation.com/servlet/equation.cmd?fa=gdb . 
     However, I was unable to get the backtrace to look similar to gdb version 7.9.1's backtrace. The 10.2 version only stated that:
-    "Backtrace stopped: previous frame identical to this frame (corrupt stack?)" (No Windows gdb.exe version gives me line numbers as Linux does, see Linux_vs_Windows_gdb_errors.md in this repo.)
+    "Backtrace stopped: previous frame identical to this frame (corrupt stack?)" 
     
 - RTools 4.2 has major changes, with all executables now in the folders 'x86_64-w64-mingw32.static.posix' or 'C:\rtools42/usr/bin'. An empty skeleton
       of folders does still exist. Also, "All libraries are included, instead of relying on external sources for downloading them. 
@@ -46,7 +46,7 @@
 - StackOverFlow: https://stackoverflow.com/questions/18407563/gcc-doesnt-produce-line-number-information-even-with-g-option
    points out a dwarf4 versus dwarf2 options issue under Linux (which may be the cause of @iperedaagirre's TMB Issue #367) but didn't help me with line numbers in the gdb.exe error reporting under Windows.
    
-- With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers and hence the reason for this WSL repo.     
+- With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers as Linux does and hence the reason for this WSL repo. See Linux_vs_Windows_gdb_errors.md in this repo.
    
 - To edit the user system path and other variables on a Windows 10 machine without admin rights, search for 'env' and 
        click on 'Edit environmental variables for your account'. With admin rights, search for 'env', select 'Edit the system evironmental variables', select the 'Advanced' tab and click on 'Environmental Variables' at the bottom. 
