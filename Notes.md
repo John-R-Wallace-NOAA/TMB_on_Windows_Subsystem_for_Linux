@@ -1,6 +1,5 @@
 
-- Since Jeroen Ooms took over maintaining Rtools from Prof. Brian Ripley and Duncan Murdoch, gdb.exe has not been available in 
-    RTools 4.0 nor in Rtools 4.2 ( https://cran.r-project.org/bin/windows/Rtools/ ). 
+- Jeroen Ooms took over maintaining RTools for Windows R from Prof. Brian Ripley and Duncan Murdoch starting with RTools 4.0.  Neither RTools 4.0 nor RTools 4.2 have gdb.exe available: https://cran.r-project.org/bin/windows/Rtools/ 
 
 - Mark Bravington tried to add gdb to RTOOLS40 on Windows 10 without success: https://stat.ethz.ch/pipermail/r-devel/2021-April/080623.html . 
 
@@ -39,16 +38,16 @@
                                        g++ 
       "W:\\Rtools\\mingw_64\\bin\\g++.exe"
    
-  since Rtools/mingw_64/Rtools/bin is still in the path.
+  since old Rtools 3.5 'Rtools/mingw_64/Rtools/bin' is still in the path.
   
 - However with a clean install of R ver 4.2.1 and Rtools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows 10
-    fails due to a missing gdb.exe.
+    fails due to the missing gdb.exe.
     
 - StackOverFlow: https://stackoverflow.com/questions/18407563/gcc-doesnt-produce-line-number-information-even-with-g-option
-   points out a dwarf4 versus dwarf2 issue under Linux (which may be the cause of @iperedaagirre's TMB Issue #367) but didn't help me with line numbers under Windows.
+   points out a dwarf4 versus dwarf2 options issue under Linux (which may be the cause of @iperedaagirre's TMB Issue #367) but didn't help me with line numbers in the gdb.exe error reporting under Windows.
    
 - With the many options I have tried, I have not been able to get any gdb version under Windows 10 to give line numbers and hence the reason for this WSL repo.     
    
-- To edit the user system path and other variables on a Windows 10 machine without Admin rights, search for 'env' and 
-       click on 'Edit environmental variables for your account'.
+- To edit the user system path and other variables on a Windows 10 machine without admin rights, search for 'env' and 
+       click on 'Edit environmental variables for your account'. With admin rights, search for 'env', select 'Edit the system evironmental variables', select the 'Advanced' tab and click on 'Environmental Variables' at the bottom. 
      
