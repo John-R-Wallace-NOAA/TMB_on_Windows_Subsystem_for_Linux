@@ -38,7 +38,7 @@
                                        g++ 
       "W:\\Rtools\\mingw_64\\bin\\g++.exe"
    
-  since old Rtools 3.5 'Rtools/mingw_64/Rtools/bin' is still in the path.
+  since old Rtools 3.5 'Rtools/mingw_64/bin' is still in the path.
   
 - However with a clean install of R ver 4.2.1 and RTools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows 10
     fails due to the missing gdb.exe.
