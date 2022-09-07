@@ -38,7 +38,7 @@
          }
      }
      
-     #  < cat("run\nbt\nquit\n", file = gdbscript) > gives the gdb commands that can be used in the gdbsource()  interactive mode:
+     #  < cat("run\nbt\nquit\n", file = gdbscript) > gives the gdb commands that can be used in the gdbsource() interactive mode:
      (gdb) run
      (gdb) bt  # backtrace
      (gdb) ...
