@@ -1,5 +1,5 @@
 Below are instructions to install the TMB R package (https://github.com/kaskr/adcomp) running under command-line Ubuntu using WSL (Windows Subsystem for Linux).
-This installation allows TMB::gdbsource() to properly debug Cpp files while using a PC running Windows 10 as the main OS.
+This installation allows TMB::gdbsource() to properly debug CPP files while using a PC running Windows 10 as the main OS.
 It also provides R on an Ubuntu installation with GDB debugging software for any other purpose. 
 
 See Linux_vs_Windows_gdb_errors.md in this repo for a comparison of the Linux and Windows gdb error reports, and see the Notes.md for additional information.
