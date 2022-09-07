@@ -114,7 +114,8 @@
           
      # -- Under Windows --
      
-     # If not already done, create the TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from the R_and_Cpp folder in this repo to that folder.
+     # If not already done, create the TMB_Debug folder and copy the 'simpleError.cpp' and simpleError.R files from 
+         the R_and_Cpp folder in this repo to that folder.
      
      # Running 64-bit R ver 4.2.1 with <C:\Rtools\mingw_64\bin> (where 64-bit gdb ver 7.9.1 is found) in the system path.  
      #      Rtools is version 3.5.0.4   (FYI, the system path also has <C:\Rtools\bin> before <C:\Rtools\mingw_64\bin>)
