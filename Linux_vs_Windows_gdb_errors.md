@@ -130,7 +130,7 @@
      # source('simpleError.R')
      
      
-     # Note in WIndows,  TMB:::.gdbsource.win()   is used:
+     # For Windows, TMB:::.gdbsource.win() is used:
      
      function (file, interactive = FALSE) 
      {
@@ -167,7 +167,7 @@
      # Rterm: No such file or directory.
      # ...
      
-     # Having already dealt with the path for GDB, I used Sys.which() in the upated .gdbsource.win() code snippet below:
+     # Having already dealt with the path for GDB, I used Sys.which() in the updated .gdbsource.win() code snippet below:
      
      file <- 'simpleError.R'
      gdbscript <- tempfile()
