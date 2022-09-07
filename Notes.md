@@ -8,8 +8,8 @@
     - As Mark points out, it does not work to just copy over gdb.exe from Rtools 3.5 (ver 7.9.1). (I also tried older RTools gdb.exe versions without success.)
     
 - A Windows standalone gdb.exe ver 10.2 that does work with R ver 4.2.1 is here: http://www.equation.com/servlet/equation.cmd?fa=gdb . 
-    However, I was unable to get the backtrace to work like gdb version 7.9.1. The 10.2 version only stated that:
-    "Backtrace stopped: previous frame identical to this frame (corrupt stack?)"
+    However, I was unable to get the backtrace to look similar to gdb version 7.9.1 backtrace. The 10.2 version only stated that:
+    "Backtrace stopped: previous frame identical to this frame (corrupt stack?)" (No Windows gdb.exe version gives me line numbers as Linux does, see below.)
     
 - RTools 4.2 has major changes, with all executables now in the folders 'x86_64-w64-mingw32.static.posix' or 'C:\rtools42/usr/bin'. An empty skeleton
       of folders does still exist. Also, "All libraries are included, instead of relying on external sources for downloading them. 
