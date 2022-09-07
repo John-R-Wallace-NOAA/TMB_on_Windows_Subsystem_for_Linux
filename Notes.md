@@ -40,7 +40,7 @@
    
   since old Rtools 3.5 'Rtools/mingw_64/Rtools/bin' is still in the path.
   
-- However with a clean install of R ver 4.2.1 and Rtools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows 10
+- However with a clean install of R ver 4.2.1 and RTools 4.2, without Rtools 3.5 installed, TMB::gdbsource() under Windows 10
     fails due to the missing gdb.exe.
     
 - StackOverFlow: https://stackoverflow.com/questions/18407563/gcc-doesnt-produce-line-number-information-even-with-g-option
