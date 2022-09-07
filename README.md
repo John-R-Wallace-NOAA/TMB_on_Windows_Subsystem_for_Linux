@@ -166,7 +166,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      (gdb) bt
      (gdb) quit
      
-     # When doing further explopration, unload simpleError.so, if needed
+     # When doing further exploration, unload simpleError.so, if needed
      getLoadedDLLs()
      dyn.unload(dynlib("simpleError"))
      
