@@ -6,7 +6,7 @@ See Linux_vs_Windows_gdb_errors.md in this repo for a comparison of the Linux an
 
 For those with a different Ubuntu installation such as a dual-boot PC or VirtualBox, jumping past the WSL instuctions will give a guide to installing the folowing apps on Ubuntu release 18.04: curl, libssl-dev (for the httr R package), GDB, and the most recent version of R. 
 
-WSL saves all the software in a single folder which can be used for computational reproducibility, exporting to another machine, or sharing with a colleague. The path to the WSL folder is given below. See also:
+WSL saves all the software in a single folder, can be used for computational reproducibility, exporting to another machine, or sharing with a colleague. The path to the WSL folder is given below. See also:
 
 https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-machines-with-import-and-export
 
