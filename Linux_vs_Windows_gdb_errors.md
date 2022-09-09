@@ -177,9 +177,7 @@
      cmd <- paste0("gdb ", Sys.which('Rterm'), " -x ", gdbscript)
      (cmd <- paste("start", cmd))
      shell(cmd)
-     
-     # which immediately (no gdb commands given) gives:
-     
+          
      TMB has received an error from Eigen. The following condition was not met:
      index >= 0 && index < size()
      Please check your matrix-vector bounds etc., or run your program through a debugger.
