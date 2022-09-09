@@ -167,8 +167,7 @@
      # Rterm: No such file or directory.
      # ...
      
-     # Having already dealt with the path for GDB, I used Sys.which() in the updated .gdbsource.win() code snippet below:
-     
+     # Having already dealt with the path for GDB, I used Sys.which() in the updated .gdbsource.win() code snippet below:     
      file <- 'simpleError.R'
      gdbscript <- tempfile()
      txt <- paste("set breakpoint pending on\nb abort\nrun --vanilla -f", file, "\nbt\n")
