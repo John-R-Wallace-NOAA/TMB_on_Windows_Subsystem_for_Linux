@@ -27,7 +27,7 @@ Type objective_function<Type>::operator() ()
   ans -= dnorm(x, y, exp(logsd0), true).sum();
   
   vector<Type> f(4);
-  f(5) = 3;                // 5 is not a valid index value here
+  f(5) = 3;                // 5 is not a valid index value here - line 30
 
   // Optionally: How to simulate the data
   SIMULATE {
