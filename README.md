@@ -79,8 +79,8 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
  
      # I copied the tar file to C:\Users\John.Wallace\AppData\Local\Packages\Ubuntu_18.04_TMB_X on another machine and
      #     imported it with the command below. 
-     # Note that the website given above on moving wsl distributions is outdated 
-     #    and the import format is now: wsl --import <Distro> <InstallLocation> <FileName> [Options] 
+     # Note that the website given above on moving wsl distributions is outdated and
+     #     the import format is now: wsl --import <Distro> <InstallLocation> <FileName> [Options] 
      wsl --import Ubuntu_18.04_TMB_X . Ubuntu_18.04_TMB_X.tar --version 2
 
      
