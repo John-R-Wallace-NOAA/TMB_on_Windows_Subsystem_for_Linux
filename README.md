@@ -67,9 +67,21 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      # The name (sort by most recently 'Date modified') will appear similar to:
      CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc
      
-     # This folder can be renamed, backed up, saved for computational reproducibility, and exported to a colleague.  
+     # This folder can be backed up, saved for computational reproducibility, and exported to a colleague.  
      # (If you also use Docker, you may have exit out of Docker before working with the folder.)
      https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-machines-with-import-and-export
+     
+     # The distro name to use for exporting is one of those shown using:
+     wsl --list --verbose
+
+     # For me, that is Ubuntu-18.04 ('X' for XServer in the tar filename) 
+     wsl --export Ubuntu-18.04 ./Ubuntu_18.04_TMB_X.tar
+ 
+     # I copied the tar file to C:\Users\John.Wallace\AppData\Local\Packages\Ubuntu_18.04_TMB_X on another machine and imported it with the command below. 
+     # Note that the website given above on moving wsl distributions is outdated 
+     #    and the import format is now: wsl --import <Distro> <InstallLocation> <FileName> [Options] 
+     wsl --import Ubuntu_18.04_TMB_X . Ubuntu_18.04_TMB_X.tar --version 2
+
      
      # WSL can also be opened by using the Windows' search feature: type < wsl > and click on 'Run as Administrator'.  
      # (There will be a different default color scheme.)
