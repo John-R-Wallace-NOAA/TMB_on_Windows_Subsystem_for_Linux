@@ -295,7 +295,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      # I deleted the extra entries and left only one entry turned on (with white check mark within a green circle). 
      #    After this change the X server worked fine (perhaps with reboot).
      # While troubleshooting, I temporarily turned off the Windows Firewall Defender and the X server also worked then.
-     # Note also, that right-clicking on the Inbound rules allows settings to be changed.
+     # Also note that right-clicking on the Inbound rules allows settings to be changed.
      
      
      # For direct launching of Ubuntu from Windows install Mintty as a terminal for WSL:
