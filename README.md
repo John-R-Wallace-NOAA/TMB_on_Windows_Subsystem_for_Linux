@@ -116,7 +116,7 @@ https://www.hanselman.com/blog/easily-move-wsl-distributions-between-windows-10-
      
      # CRAN instructions for installing R in Ubuntu: https://cran.r-project.org/  
      # On the CRAN website select 'Ubuntu' on the line: < Download R for Linux (Debian, Fedora/Redhat, Ubuntu) >
-     # < install build-essential> is not in the CRAN instuctions but is needed for C++ and other essential apps
+     # < install build-essential> is not in the CRAN instuctions but is needed for gcc and other essential apps
      apt update -qq
      apt -y install build-essential
      
